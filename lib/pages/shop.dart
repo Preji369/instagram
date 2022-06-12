@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram/util/shop_grid.dart';
 
 class UserShop extends StatelessWidget {
-  const UserShop({super.key});
+ 
 
   @override
   Widget build(BuildContext context) {

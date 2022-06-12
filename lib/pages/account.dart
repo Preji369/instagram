@@ -3,12 +3,9 @@ import 'package:instagram/util/account_tab1.dart';
 import 'package:instagram/util/account_tab2.dart';
 import 'package:instagram/util/account_tab3.dart';
 import 'package:instagram/util/account_tab4.dart';
-
 import 'package:instagram/util/bubble_stories.dart';
 
 class UserAccount extends StatelessWidget {
-  const UserAccount({super.key});
-
   @override
   Widget build(BuildContext context) {
     var accountTab1 = AccountTab1;
@@ -57,7 +54,7 @@ class UserAccount extends StatelessWidget {
             ],
           ),
         ),
-        buildProfileWidget()
+        Expanded(child: buildProfileWidget())
       ],
     ));
   }
@@ -160,46 +157,40 @@ class UserAccount extends StatelessWidget {
             ],
           ),
         ),
-        Expanded(child: Container())
-        // TabBar(tabs: [
-        //   Tab(
-        //     icon: Icon(Icons.grid_3x3_outlined),
-        //   ),
-        //   Tab(
-        //     icon: Icon(Icons.video_call),
-        //   ),
-        //   Tab(
-        //     icon: Icon(Icons.shop),
-        //   ),
-        //   Tab(
-        //     icon: Icon(Icons.person),
-        //   )
-        // ]),
-        // ListView(
-        //   children: [
-        //     Container(
-        //       height: 300,
-        //       child: TabBarView(children: [
-        //         Container(
-        //           color: Colors.amber,
-        //         ),
-        //         Container(
-        //           color: Color.fromARGB(255, 15, 7, 255),
-        //         ),
-        //         Container(
-        //           color: Color.fromARGB(255, 255, 7, 152),
-        //         ),
-        //         Container(
-        //           color: Color.fromARGB(255, 28, 255, 7),
-        //         )
-        //         //   AccountTab1(),
-        //         //   AccountTab2(),
-        //         //   AccountTab3(),
-        //         //   AccountTab4()
-        //       ]),
-        //     ),
-        //   ],
-        // )
+        Expanded(
+          child: DefaultTabController(
+            length: 4,
+            child: Container(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  TabBar(tabs: [
+                    Tab(
+                      icon: Icon(Icons.grid_3x3_outlined),
+                    ),
+                    Tab(
+                      icon: Icon(Icons.video_call),
+                    ),
+                    Tab(
+                      icon: Icon(Icons.shop),
+                    ),
+                    Tab(
+                      icon: Icon(Icons.person),
+                    )
+                  ]),
+                  Expanded(
+                    child: TabBarView(children: [
+                      AccountTab1(),
+                      AccountTab2(),
+                      AccountTab3(),
+                      AccountTab4()
+                    ]),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }

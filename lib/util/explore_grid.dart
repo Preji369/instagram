@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ExploreGrid extends StatelessWidget {
-  const ExploreGrid({super.key});
+  const ExploreGrid({key});
 
   @override
   Widget build(BuildContext context) {

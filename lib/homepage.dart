@@ -7,7 +7,7 @@ import 'package:instagram/pages/shop.dart';
 import 'package:instagram/util/user_posts.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  // const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();

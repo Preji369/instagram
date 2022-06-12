@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ShopGrid extends StatelessWidget {
-  const ShopGrid({super.key});
+  const ShopGrid({key});
 
   @override
   Widget build(BuildContext context) {
